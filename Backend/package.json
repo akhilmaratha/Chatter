@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon index.js",
-   "start": "node backend/index.js",
-    "build":"npm install && cd frontend && npm install && npm run build"
+   "start": "node index.js",
+    "build":"npm install && npm install --prefix Frontend && npm run build --prefix Frontend"
   },
   "keywords": [],
   "author": "",
