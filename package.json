@@ -1,0 +1,8 @@
+{
+  "name": "chatapp",
+  "version": "1.0.0",
+  "description": "Chat Application with MERN Stack",
+  "scripts": {
+    "install-all": "cd Frontend && npm install && cd ../Backend && npm install"
+  }
+} 
