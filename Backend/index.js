@@ -30,13 +30,15 @@ try {
 app.use("/api/user", userRoute);
 app.use("/api/message", messageRoute);
 
+if(process.env.NODE_ENV==="production"){
+  const __dirname = path.resolve();
+ app.use(express.static(path.join(__dirname,"./Frontend/dist")));
+ app.get("*",(req,res)=>{
+    res.sendFile(path.join(__dirname,"./Frontend/dist","index.html"));
+})  
+}
 
-const __dirname = path.resolve();
-app.use(express.static(path.join(__dirname,"/Frontend/dist")));
 
-app.get("*",(req,res)=>{
-    res.sendFile(path.join(__dirname,"Frontend","dist","index.html"));
-})
 
 server.listen(PORT, () => {
     console.log(`Server is Running on port ${PORT}`);
